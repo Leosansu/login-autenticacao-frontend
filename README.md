@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Projeto Login e Autenticação - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um frontend em React + TypeScript para autenticação de usuários, consumindo uma API backend.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Tela de login com campos de e-mail e senha
+- Integração com API para autenticação
+- Exibição de mensagens de erro em caso de falha no login
 
-### `npm start`
+## Como executar o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Instale as dependências:**
+   ```
+   npm install
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Inicie o servidor de desenvolvimento:**
+   ```
+   npm start
+   ```
+   O app será aberto no navegador, normalmente em [http://localhost:3000](http://localhost:3000) ou [http://localhost:3001](http://localhost:3001).
 
-### `npm test`
+3. **Pré-requisitos:**
+   - Certifique-se de que a API backend está rodando e acessível (por padrão em `http://localhost:3000`).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estrutura de Pastas
 
-### `npm run build`
+- `src/components` — Componentes reutilizáveis (ex: LoginForm)
+- `src/pages` — Páginas da aplicação (ex: LoginPage)
+- `src/services` — Serviços para comunicação com a API
+- `src/types` — Tipos e interfaces TypeScript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Scripts Disponíveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start` — Executa o app em modo desenvolvimento
+- `npm run build` — Gera uma versão otimizada para produção
+- `npm test` — Executa os testes automatizados
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Observações
 
-### `npm run eject`
+- Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
+- Para autenticação, o backend deve aceitar requisições CORS do endereço do frontend.
+- O campo de senha enviado para a API deve ser `password`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Desenvolvido para fins de estudo e demonstração de autenticação com React e TypeScript.
