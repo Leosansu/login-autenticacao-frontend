@@ -5,8 +5,11 @@ Este projeto é um frontend em React + TypeScript para autenticação de usuári
 ## Funcionalidades
 
 - Tela de login com campos de e-mail e senha
-- Integração com API para autenticação
-- Exibição de mensagens de erro em caso de falha no login
+- Tela de cadastro de usuário com campos nome, e-mail e senha
+- Integração com API para autenticação e cadastro
+- Exibição de mensagens de erro em caso de falha no login ou cadastro
+- Redirecionamento automático para login após cadastro
+- Interface moderna, responsiva e com imagem de fundo
 
 ## Como executar o projeto
 
@@ -26,8 +29,8 @@ Este projeto é um frontend em React + TypeScript para autenticação de usuári
 
 ## Estrutura de Pastas
 
-- `src/components` — Componentes reutilizáveis (ex: LoginForm)
-- `src/pages` — Páginas da aplicação (ex: LoginPage)
+- `src/components` — Componentes reutilizáveis (ex: LoginForm, RegisterForm)
+- `src/pages` — Páginas da aplicação (ex: LoginPage, RegisterPage)
 - `src/services` — Serviços para comunicação com a API
 - `src/types` — Tipos e interfaces TypeScript
 
@@ -40,8 +43,9 @@ Este projeto é um frontend em React + TypeScript para autenticação de usuári
 ## Observações
 
 - Este projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
-- Para autenticação, o backend deve aceitar requisições CORS do endereço do frontend.
+- Para autenticação e cadastro, o backend deve aceitar requisições CORS do endereço do frontend.
 - O campo de senha enviado para a API deve ser `password`.
+- Após o cadastro, o usuário é redirecionado automaticamente para a tela de login.
 
 ---
 

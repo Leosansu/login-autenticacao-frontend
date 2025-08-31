@@ -10,7 +10,7 @@
 }
 
 .login-form {
-  background: rgba(245, 246, 250, 0.85); /* Cor com transparência */
+  background: rgba(245, 246, 250, 0.5); /* Ainda mais transparente */
   padding: 20px 16px; /* Reduz o padding */
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
@@ -78,4 +78,39 @@
   text-align: center;
   margin-top: 8px;
   font-size: 14px;
+}
+
+.register-btn {
+  margin-top: 8px;
+  background: transparent;
+  color: #0984e3;
+  border: 1px solid #0984e3;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 7px 0;
+  width: 120px;
+  align-self: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.register-btn:hover {
+  background: #0984e3;
+  color: #fff;
+}
+
+.register-link {
+  display: block;
+  margin-top: 0;      /* Agora fica colado ao botão */
+  color: #0984e3;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.register-link:hover,
+.register-link:focus {
+  color: #0652dd;
 }
