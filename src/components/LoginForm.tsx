@@ -25,7 +25,10 @@ const LoginForm: React.FC = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <div className="profile-icon" style={{ textAlign: 'center', fontSize: 40, marginBottom: 8 }}>
+          👤
+        </div>
+        <h2 className="login-title">Login</h2>
         <div className="form-group">
           <label>Email:</label>
           <input

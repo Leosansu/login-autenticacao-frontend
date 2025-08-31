@@ -1,28 +1,34 @@
 .login-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  background: #f5f6fa;
+  align-items: flex-start; /* Alinha o formulário ao topo do container */
+  min-height: 100vh; /* Ocupa toda a altura da tela */
+  padding-top: 60px; /* Espaço do topo */
+  /* Imagem de fundo */
+  background: url('https://upload.wikimedia.org/wikipedia/commons/b/be/Top_of_Atmosphere.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .login-form {
-  background: #fff;
-  padding: 32px 28px;
+  background: rgba(245, 246, 250, 0.85); /* Cor com transparência */
+  padding: 20px 16px; /* Reduz o padding */
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  width: 320px;
+  width: 260px; /* Reduz a largura */
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px; /* Espaçamento menor entre os elementos */
+  /* Opcional: adiciona um leve efeito de vidro */
+  backdrop-filter: blur(2px);
 }
 
 .login-form h2 {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px; /* Menor espaço abaixo do título */
   color: #2d3436;
   font-size: 20px; /* Diminua o tamanho da fonte aqui */
   font-weight: 500; /* Opcional: deixa menos "grossa" */
+  margin-top: 0;
 }
 
 .form-group {
@@ -37,10 +43,10 @@
 }
 
 .login-form input {
-  padding: 8px;
+  padding: 6px; /* Menor altura dos campos */
   border: 1px solid #dfe6e9;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 15px; /* Fonte um pouco menor */
   outline: none;
   transition: border 0.2s;
 }
@@ -50,14 +56,16 @@
 }
 
 .login-form button {
-  padding: 10px;
+  padding: 7px 0;
   background: #0984e3;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
+  width: 120px;           /* Define uma largura menor */
+  align-self: center;     /* Centraliza o botão no formulário */
 }
 
 .login-form button:disabled {
