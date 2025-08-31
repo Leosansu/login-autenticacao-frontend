@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { login } from '../services/authService';
+import './LoginForm.css'; // Adicione este import para usar um CSS externo
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +14,6 @@ const LoginForm: React.FC = () => {
     setCarregando(true);
     try {
       const resposta = await login({ email, password });
-      // Aqui você pode salvar o token no localStorage ou contexto, se desejar
       alert('Login realizado com sucesso! Token: ' + resposta.token);
     } catch (err: any) {
       setErro(err.message || 'Erro ao fazer login');
@@ -23,30 +23,33 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Senha:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit" disabled={carregando}>
-        {carregando ? 'Entrando...' : 'Entrar'}
-      </button>
-      {erro && <p style={{ color: 'red' }}>{erro}</p>}
-    </form>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Senha:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" disabled={carregando}>
+          {carregando ? 'Entrando...' : 'Entrar'}
+        </button>
+        {erro && <p className="error-message">{erro}</p>}
+      </form>
+    </div>
   );
 };
 

@@ -1,0 +1,73 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: #f5f6fa;
+}
+
+.login-form {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #2d3436;
+  font-size: 20px; /* Diminua o tamanho da fonte aqui */
+  font-weight: 500; /* Opcional: deixa menos "grossa" */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.login-form label {
+  font-size: 14px;
+  color: #636e72;
+}
+
+.login-form input {
+  padding: 8px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-form input:focus {
+  border: 1.5px solid #0984e3;
+}
+
+.login-form button {
+  padding: 10px;
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-form button:disabled {
+  background: #b2bec3;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d63031;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+}
