@@ -19,6 +19,7 @@ const LoginForm: React.FC = () => {
     try {
       const resposta = await login({ email, password });
       localStorage.setItem('token', resposta.token);
+      localStorage.setItem('nome', resposta.nome);
       setSucesso('Login realizado com sucesso!');
       setTimeout(() => navigate('/dashboard'), 1200); // Redireciona após 1,2s
     } catch (err: any) {

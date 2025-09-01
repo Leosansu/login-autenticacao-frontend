@@ -5,6 +5,7 @@ export interface LoginData {
 
 export interface AuthResponse {
   token: string;
+  nome: string;
   // Adicione outros campos retornados pela sua API, se necessário
 }
 
