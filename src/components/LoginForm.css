@@ -114,3 +114,10 @@
 .register-link:focus {
   color: #0652dd;
 }
+
+.success-message {
+  color: #00b894;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+}

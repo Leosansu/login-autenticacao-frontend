@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { login } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
-import './LoginForm.css'; // Adicione este import para usar um CSS externo
+import './LoginForm.css';
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [erro, setErro] = useState('');
+  const [sucesso, setSucesso] = useState('');
   const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
+    setSucesso('');
     setCarregando(true);
     try {
       const resposta = await login({ email, password });
-      alert('Login realizado com sucesso! Token: ' + resposta.token);
-      navigate('/'); // Redireciona para a página inicial ou dashboard após o login
+      localStorage.setItem('token', resposta.token);
+      setSucesso('Login realizado com sucesso!');
+      setTimeout(() => navigate('/dashboard'), 1200); // Redireciona após 1,2s
     } catch (err: any) {
       setErro(err.message || 'Erro ao fazer login');
     } finally {
@@ -64,6 +67,7 @@ const LoginForm: React.FC = () => {
           </span>
         </div>
         {erro && <p className="error-message">{erro}</p>}
+        {sucesso && <p className="success-message">{sucesso}</p>}
       </form>
     </div>
   );

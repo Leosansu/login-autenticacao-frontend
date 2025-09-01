@@ -7,12 +7,14 @@ const RegisterForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [erro, setErro] = useState('');
+  const [sucesso, setSucesso] = useState('');
   const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
+    setSucesso('');
     setCarregando(true);
     try {
       const response = await fetch('http://localhost:3000/auth/register', {
@@ -23,8 +25,9 @@ const RegisterForm: React.FC = () => {
       if (!response.ok) {
         throw new Error('Erro ao cadastrar usuário');
       }
-      alert('Cadastro realizado com sucesso!');
-      navigate('/'); // Redireciona para a página de login
+      localStorage.setItem('nome', name);
+      setSucesso('Cadastro realizado com sucesso!');
+      setTimeout(() => navigate('/'), 1500); // Redireciona para login após 2 segundos
     } catch (err: any) {
       setErro(err.message || 'Erro ao cadastrar');
     } finally {
@@ -70,6 +73,7 @@ const RegisterForm: React.FC = () => {
           {carregando ? 'Cadastrando...' : 'Cadastrar'}
         </button>
         {erro && <p className="error-message">{erro}</p>}
+        {sucesso && <p className="success-message">{sucesso}</p>}
       </form>
     </div>
   );
