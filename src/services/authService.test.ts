@@ -30,3 +30,22 @@ it('deve lançar erro se o login for inválido', async () => {
     login({ email: 'errado@email.com', password: 'senhaerrada' })
   ).rejects.toThrow('Usuário ou senha inválidos');
 });
+
+it('deve enviar o body correto na requisição', async () => {
+  fetchMock.mockResponseOnce(JSON.stringify({ token: 'abc', nome: 'Cleo' }));
+  const data = { email: 'a@a.com', password: '123' };
+  await login(data);
+  expect(fetchMock).toHaveBeenCalledWith(
+    'http://localhost:3000/auth/login',
+    expect.objectContaining({
+      body: JSON.stringify(data),
+    })
+  );
+});
+
+it('deve lançar erro se o fetch falhar', async () => {
+  fetchMock.mockRejectOnce(new Error('Falha de rede'));
+  await expect(
+    login({ email: 'a@a.com', password: '123' })
+  ).rejects.toThrow('Falha de rede');
+});
