@@ -43,8 +43,9 @@ const RegisterForm: React.FC = () => {
         </div>
         <h2 className="login-title">Cadastro</h2>
         <div className="form-group">
-          <label>Nome:</label>
+          <label htmlFor="name">Nome:</label>
           <input
+            id="name"
             type="text"
             value={name}
             onChange={e => setName(e.target.value)}
@@ -52,8 +53,9 @@ const RegisterForm: React.FC = () => {
           />
         </div>
         <div className="form-group">
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
+            id="email"
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -61,8 +63,9 @@ const RegisterForm: React.FC = () => {
           />
         </div>
         <div className="form-group">
-          <label>Senha:</label>
+          <label htmlFor="password">Senha:</label>
           <input
+            id="password"
             type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}

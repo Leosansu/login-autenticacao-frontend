@@ -50,4 +50,24 @@ describe('LoginForm', () => {
 
     jest.useRealTimers();
   });
+
+  it('exibe mensagem de erro ao falhar o login', async () => {
+    // Mock do login para rejeitar a Promise simulando erro
+    (login as jest.Mock).mockRejectedValueOnce({ message: 'Credenciais inválidas' });
+
+    render(<LoginForm />);
+    fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'user@erro.com' } });
+    fireEvent.change(screen.getByLabelText(/Senha/i), { target: { value: 'senhaerrada' } });
+    fireEvent.click(screen.getByRole('button', { name: /Entrar/i }));
+
+    // Espera a mensagem de erro aparecer
+    expect(await screen.findByText(/Credenciais inválidas/i)).toBeInTheDocument();
+
+    // Garante que não salvou token nem nome no localStorage
+    expect(localStorage.getItem('token')).toBeNull();
+    expect(localStorage.getItem('nome')).toBeNull();
+
+    // Garante que não houve redirecionamento
+    expect(mockedNavigate).not.toHaveBeenCalled();
+  });
 });
