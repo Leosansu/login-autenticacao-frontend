@@ -14,15 +14,15 @@ Este projeto é um frontend em React + TypeScript para autenticação de usuári
 ## Como executar o projeto
 
 1. **Instale as dependências:**
-   ```
+   ```sh
    npm install
    ```
 
 2. **Inicie o servidor de desenvolvimento:**
-   ```
+   ```sh
    npm start
    ```
-   O app será aberto no navegador, normalmente em [http://localhost:3000](http://localhost:3000) ou [http://localhost:3001](http://localhost:3001).
+   O app será aberto no navegador, normalmente em [http://localhost:3000](http://localhost:3000).
 
 3. **Pré-requisitos:**
    - Certifique-se de que a API backend está rodando e acessível (por padrão em `http://localhost:3000`).
@@ -30,9 +30,31 @@ Este projeto é um frontend em React + TypeScript para autenticação de usuári
 ## Estrutura de Pastas
 
 - `src/components` — Componentes reutilizáveis (ex: LoginForm, RegisterForm)
-- `src/pages` — Páginas da aplicação (ex: LoginPage, RegisterPage)
+- `src/pages` — Páginas da aplicação (ex: LoginPage, RegisterPage, Dashboard)
 - `src/services` — Serviços para comunicação com a API
 - `src/types` — Tipos e interfaces TypeScript
+
+## Testes Automatizados
+
+O projeto possui testes automatizados para os principais fluxos de autenticação e cadastro, garantindo a qualidade dos componentes e serviços.
+
+### Executando os testes
+
+Para rodar todos os testes:
+```sh
+npm test
+```
+
+Para rodar um teste específico (exemplo para LoginForm):
+```sh
+npm test LoginForm -- --verbose
+```
+
+Os testes cobrem:
+- Renderização dos formulários de login e cadastro
+- Envio de formulários com sucesso e tratamento de erros
+- Integração com o serviço de autenticação
+- Comportamento dos botões e mensagens exibidas ao usuário
 
 ## Scripts Disponíveis
 
